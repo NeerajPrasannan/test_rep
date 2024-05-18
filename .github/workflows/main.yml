@@ -12,7 +12,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
 
     - name: Sync files
       run: |
-        rsync -avz --delete ./ root@54.82.9.251:/var/www/html/
+        ssh -o StrictHostKeyChecking=no root@54.82.9.251 "cd /var/www/html/test_rep && git pull origin main"
