@@ -39,10 +39,14 @@ jobs:
         pwd
         echo "pull"
         git pull origin main
+        echo "restart apache"
+        sudo systemctl restart apache2
         exit
         exit
         rm -f token_key.pem
         ls -lrt
+        
+
      
 
     # - name: Copy files to EC2
