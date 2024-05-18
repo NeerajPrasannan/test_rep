@@ -32,7 +32,7 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > token_key.pem
         chmod 400 token_key.pem
         echo "login into server "
-        ssh -i token_key.pem ubuntu@54.82.9.251
+        ssh -T -i token_key.pem ubuntu@54.82.9.251
         echo "going to repo"
         sudo su
         cd /var/www/html/test_rep
