@@ -41,6 +41,10 @@ jobs:
         sudo su
         echo "pwd"
         pwd
+        echo "cd to repo dir under apache www"
+        cd .. & cd .. & cd /var/www/html/test_rep
+        echo "pwd"
+        pwd
         echo "pull"
         git pull origin main
         echo "restart apache"
