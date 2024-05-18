@@ -37,9 +37,6 @@ jobs:
         sudo su
         echo "pwd"
         pwd
-        cd /var/www/html/test_rep
-        echo "pwd"
-        pwd
         echo "pull"
         git pull origin main
         exit
