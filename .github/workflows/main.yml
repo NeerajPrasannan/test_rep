@@ -46,6 +46,7 @@ jobs:
         echo "pwd"
         pwd
         echo "pull"
+        sudo git checkout -f main
         git pull origin main
         echo "restart apache"
         sudo systemctl restart apache2
