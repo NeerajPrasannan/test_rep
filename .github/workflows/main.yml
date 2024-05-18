@@ -20,13 +20,24 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
     - name: work/not 
       run: |
         echo "running pwd"
         pwd
         echo "running ls"
         ls -l
-        
+    - name: my_server_login
+      run: |
+        echo "login into server "
+        ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@54.82.9.251
+        echo "going to repo"
+        sudo su
+        cd /var/www/html/test_rep
+        echo "pwd"
+        pwd
+        echo "pull"
+        git pull origin main
         
      
 
