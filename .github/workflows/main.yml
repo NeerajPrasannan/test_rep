@@ -47,8 +47,12 @@ jobs:
         sudo systemctl restart apache2
         exit
         exit
+EOF
+
+        # Clean up
         rm -f token_key.pem
-        ls -lrt
+
+        echo "Deployment complete"
         
 
      
