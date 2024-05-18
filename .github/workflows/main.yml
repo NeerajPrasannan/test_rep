@@ -24,6 +24,7 @@ jobs:
       run: |
         echo "running pwd"
         pwd
+        echo "running ls"
         ls -l
         
         
