@@ -21,4 +21,4 @@ jobs:
 
     - name: Sync files
       run: |
-        ssh -o StrictHostKeyChecking=no root@54.82.9.251 "cd /var/www/html/test_rep && git pull origin main"
+        ssh -o StrictHostKeyChecking=no ubuntu@54.82.9.251 "cd /var/www/html/test_rep && git pull origin main"
