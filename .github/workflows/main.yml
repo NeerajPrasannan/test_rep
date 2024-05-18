@@ -49,6 +49,8 @@ jobs:
         git pull origin main
         echo "restart apache"
         sudo systemctl restart apache2
+        echo "index cat contens"
+        cat /var/www/html/test_rep/index.html
         exit
         exit
         EOF
