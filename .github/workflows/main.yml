@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: nmae
+      run: ls
     
   push_job:
     runs-on: ubuntu-latest
