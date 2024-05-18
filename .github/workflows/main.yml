@@ -21,7 +21,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: work/not 
-      run: 
+      run: |
         pwd
         ls -l
         
