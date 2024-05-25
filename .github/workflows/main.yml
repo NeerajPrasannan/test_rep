@@ -32,7 +32,7 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > token_key.pem
         chmod 400 token_key.pem
         echo "login into server "
-        ssh -T -o StrictHostKeyChecking=no  -i token_key.pem ubuntu@54.82.9.251 << 'EOF'
+        ssh -T -o StrictHostKeyChecking=no  -i token_key.pem ec2-user@${{SSH_HOST}} << 'EOF'
         echo "who am i "
         whoami
         echo "pwd"
@@ -42,14 +42,16 @@ jobs:
         echo "pwd"
         pwd
         echo "cd to repo dir under apache www"
-        cd .. & cd .. & cd /var/www/html/test_rep
+        cd .. & cd .. & cd /repo/test_rep
         echo "pwd"
         pwd
         echo "pull"
         sudo git checkout -f main
         git pull origin main
-        echo "restart apache"
-        sudo systemctl restart apache2
+        echo "restart docker-compose"
+        # sudo systemctl restart apache2
+        sudo docker-compose down -v
+        sudo docker-compose up -d
         echo "index cat contens"
         cat /var/www/html/test_rep/index.html
         exit
