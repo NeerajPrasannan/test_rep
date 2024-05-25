@@ -42,7 +42,7 @@ jobs:
         echo "pwd"
         pwd
         echo "cd to repo dir under apache www"
-        cd .. & cd .. & cd /repo/test_rep
+        cd /home/ec2-user/repos/test_rep
         echo "pwd"
         pwd
         echo "pull"
