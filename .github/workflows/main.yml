@@ -32,7 +32,7 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > token_key.pem
         chmod 400 token_key.pem
         echo "login into server "
-        ssh -T -o StrictHostKeyChecking=no  -i token_key.pem ec2-user@${{SSH_HOST}} << 'EOF'
+        ssh -T -o StrictHostKeyChecking=no  -i token_key.pem ec2-user@54.91.9.147 << 'EOF'
         echo "who am i "
         whoami
         echo "pwd"
