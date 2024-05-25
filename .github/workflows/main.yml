@@ -45,6 +45,9 @@ jobs:
         cd /home/ec2-user/repos/test_rep
         echo "pwd"
         pwd
+        echo "Setting up SSH agent for git"
+        eval $(ssh-agent -s)
+        ssh-add /home/ec2-user/.ssh/id_rsa   
         echo "pull"
         sudo git checkout -f main
         git pull origin main
