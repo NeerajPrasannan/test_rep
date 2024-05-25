@@ -48,6 +48,11 @@ jobs:
         
         echo "Setting Git safe directory"
         git config --global --add safe.directory /home/ec2-user/repos/test_rep
+
+        echo "Fixing ownership and permissions"
+        sudo chown -R ec2-user:ec2-user /home/ec2-user/repos/test_rep
+        sudo chmod -R u+rwX /home/ec2-user/repos/test_rep
+      
         echo "Setting up SSH agent for git"
         eval $(ssh-agent -s)
         ssh-add /home/ec2-user/.ssh/id_rsa   
