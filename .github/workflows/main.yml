@@ -53,8 +53,10 @@ jobs:
       
 
         
-        echo "pull"
+        echo "git checkout"
         sudo git checkout -f main
+
+        echo "git pull"
         git pull origin main
         echo "restart docker-compose"
         # sudo systemctl restart apache2
