@@ -57,7 +57,7 @@ jobs:
         sudo git checkout -f main
 
         echo "git pull"
-        git pull origin main
+        git pull -f origin main
         echo "restart docker-compose"
         # sudo systemctl restart apache2
         sudo docker-compose build
