@@ -20,5 +20,5 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'this is  count of  = {} times.\n'.format(count)
+    return 'sample tezst countclicked  {} times.\n'.format(count)
 
